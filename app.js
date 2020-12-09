@@ -1,4 +1,4 @@
-// Anti clic droit:
+// pas de clic droit menu:
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
