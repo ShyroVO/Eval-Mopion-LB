@@ -234,6 +234,7 @@ function checkCase() {
         playerWin.innerHTML= "Match Nul!";
         playerWin.style.backgroundColor= "red";
         quiJoue.style.backgroundColor= "red";
+        window.location.reload();
     }
 }
 
