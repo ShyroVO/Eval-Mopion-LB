@@ -6,7 +6,6 @@ document.addEventListener('contextmenu', function (event){
 // Selection joueur X ou O qui commence:
 let compteur = Math.floor(Math.random()* 2 + 1);
 let quiJoue = document.getElementById('quiJoue');
-let buttonColor = document.getElementById('game');
 
 if (compteur === 1) {
     quiJoue.innerHTML = "Joueur X qui commence!";
@@ -18,6 +17,7 @@ else {
 }
 
 // Changement de tour:
+
 function aQuiLeTour () {
     if (compteur === 2) {
         quiJoue.innerHTML = "Joueur X !";
@@ -32,19 +32,20 @@ function aQuiLeTour () {
 function elementsJoueurX () {
     aQuiLeTour();
     compteur = 2;
-    buttonColor.classList.add("colorPlayerX");
+    pionTotals--;
 }
 
 function elementsJoueurO () {
     aQuiLeTour();
     compteur = 1;
-    buttonColor.classList.add("colorPlayerO");
+    pionTotals--;
 }
 
 // Boucle action sur les cases (bouton):
 let casesMorpion = document.getElementsByTagName('button');
 let pionX = "X";
 let pionO = "O";
+let pionTotals = 9;
 
 let one, two, three, four, five, six, seven, eight, nine;
 
@@ -196,20 +197,21 @@ for (let caseMorpion of casesMorpion) {
 }
 
 // Victoire de qui:
+let playerWin = document.getElementById('playerWin');
+
 function checkCase() {
-    let playerX = document.getElementById("playerX");
-    let playerO = document.getElementById('playerO');
-    let playerXpoint = 1;
-    let playerOpoint = 1;
 
     if (one === true && two === true && three === true || four === true && five === true && six === true ||
         seven === true && eight === true && nine === true || one === true && four === true && seven === true ||
         two === true && five === true && eight === true || three === true && six === true && nine === true ||
         one === true && five === true && nine === true || three === true && five === true && seven === true) {
 
-        playerX.innerHTML= playerXpoint + "pts";
-        playerXpoint++;
+        playerWin.innerHTML= "Joueur X a gagner!";
+        quiJoue.innerHTML= "Joueur X a gagner!"
+        playerWin.style.backgroundColor="lightblue";
+        quiJoue.style.backgroundColor="lightblue";
         alert("Joueur X Gagne!");
+        pionTotals++;
         window.location.reload();
     }
 
@@ -218,10 +220,20 @@ function checkCase() {
         two === false && five === false && eight === false || three === false && six === false && nine === false ||
         one === false && five === false && nine === false || three === false && five === false && seven === false) {
 
-        playerO.innerHTML= playerOpoint + "pts";
-        playerOpoint++;
+        playerWin.innerHTML= "Joueur O a gagner!";
+        quiJoue.innerHTML= "Joueur O a gagner!"
+        playerWin.style.backgroundColor="#ee8341";
+        quiJoue.style.backgroundColor="#ee8341";
         alert("Joueur O Gagne!");
+        pionTotals++;
         window.location.reload();
     }
 
+    if (pionTotals === 0) {
+        quiJoue.innerHTML= "Match Nul!"
+        playerWin.innerHTML= "Match Nul!";
+        playerWin.style.backgroundColor= "red";
+        quiJoue.style.backgroundColor= "red";
+    }
 }
+

@@ -69,12 +69,14 @@ body {
     border-style: solid solid none solid;
 }
 
-.colorPlayerX button:hover {
+#game button:hover {
     background-color: lightblue;
 }
 
-.colorPlayerO button:hover {
-    background-color: #ee8341;
+#score {
+    text-align: center;
+    height: 5rem;
+    width: 100%;
 }
 
 #restartButton {
