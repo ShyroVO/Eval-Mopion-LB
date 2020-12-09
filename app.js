@@ -44,6 +44,8 @@ let casesMorpion = document.getElementsByTagName('button');
 let pionX = "X";
 let pionO = "O";
 
+let one, two, three, four, five, six, seven, eight, nine;
+
 for (let caseMorpion of casesMorpion) {
     caseMorpion.addEventListener('click', function (){
 
@@ -52,10 +54,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case1').innerHTML= pionX;
                     elementsJoueurX()
+                    one = true;
                 }
                 else {
                     document.getElementById('case1').innerHTML= pionO;
                     elementsJoueurO()
+                    one = false;
                 }
                 break;
 
@@ -63,10 +67,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case2').innerHTML= pionX;
                     elementsJoueurX()
+                    two = true;
                 }
                 else {
                     document.getElementById('case2').innerHTML= pionO;
                     elementsJoueurO()
+                    two = false;
                 }
                 break;
 
@@ -74,10 +80,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case3').innerHTML= pionX;
                     elementsJoueurX()
+                    three = true;
                 }
                 else {
                     document.getElementById('case3').innerHTML= pionO;
                     elementsJoueurO()
+                    three = false;
                 }
                 break;
 
@@ -85,10 +93,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case4').innerHTML= pionX;
                     elementsJoueurX()
+                    four = true;
                 }
                 else {
                     document.getElementById('case4').innerHTML= pionO;
                     elementsJoueurO()
+                    four = false;
                 }
                 break;
 
@@ -96,10 +106,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case5').innerHTML= pionX;
                     elementsJoueurX()
+                    five = true;
                 }
                 else {
                     document.getElementById('case5').innerHTML= pionO;
                     elementsJoueurO()
+                    five = false;
                 }
                 break;
 
@@ -107,10 +119,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case6').innerHTML= pionX;
                     elementsJoueurX()
+                    six = true;
                 }
                 else {
                     document.getElementById('case6').innerHTML= pionO;
                     elementsJoueurO()
+                    six = false;
                 }
                 break;
 
@@ -118,10 +132,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case7').innerHTML= pionX;
                     elementsJoueurX()
+                    seven = true;
                 }
                 else {
                     document.getElementById('case7').innerHTML= pionO;
                     elementsJoueurO()
+                    seven = false;
                 }
                 break;
 
@@ -129,10 +145,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case8').innerHTML= pionX;
                     elementsJoueurX()
+                    eight = true;
                 }
                 else {
                     document.getElementById('case8').innerHTML= pionO;
                     elementsJoueurO()
+                    eight = false;
                 }
                 break;
 
@@ -140,10 +158,12 @@ for (let caseMorpion of casesMorpion) {
                 if (compteur === 1) {
                     document.getElementById('case9').innerHTML= pionX;
                     elementsJoueurX()
+                    nine = true;
                 }
                 else {
                     document.getElementById('case9').innerHTML= pionO;
                     elementsJoueurO()
+                    nine = false;
                 }
                 break;
 
@@ -152,9 +172,5 @@ for (let caseMorpion of casesMorpion) {
                 break;
 
         }
-
     })
 }
-
-// Boucle des points:
-let caseCheck = document.get
