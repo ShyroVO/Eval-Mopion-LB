@@ -6,6 +6,8 @@
     <title>Morpion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,22 +15,32 @@
 
         <div id="titre">
             <h1>Morpion Game</h1>
+            <p>Joueur ?</p>
         </div>
 
         <div id="game">
-            <div id="case1"></div>
-            <div id="case2"></div>
-            <div id="case3"></div>
-            <div id="case4"></div>
-            <div id="case5"></div>
-            <div id="case6"></div>
-            <div id="case7"></div>
-            <div id="case8"></div>
-            <div id="case9"></div>
+            <div id="case1">X</div>
+            <div id="case2">X</div>
+            <div id="case3">X</div>
+            <div id="case4">X</div>
+            <div id="case5">X</div>
+            <div id="case6">X</div>
+            <div id="case7">X</div>
+            <div id="case8">X</div>
+            <div id="case9">X</div>
         </div>
 
         <div id="score">
+            <div id="player1">
+                Joueur X: 0 pts
+            </div>
+            <div id="player2">
+                Joueur O: 0 pts
+            </div>
+        </div>
 
+        <div id="restartButton">
+            <button id="restart">Restart</button>
         </div>
 
     </div>
