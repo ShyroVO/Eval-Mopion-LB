@@ -210,7 +210,7 @@ function checkCase() {
         playerX.innerHTML= playerXpoint + "pts";
         playerXpoint++;
         alert("Joueur X Gagne!");
-        document.getElementsByTagName('button').innerHTML = "";
+        window.location.reload();
     }
 
     else if (one === false && two === false && three === false || four === false && five === false && six === false ||
@@ -221,6 +221,7 @@ function checkCase() {
         playerO.innerHTML= playerOpoint + "pts";
         playerOpoint++;
         alert("Joueur O Gagne!");
-        document.getElementsByTagName('button').innerHTML = "";
+        window.location.reload();
     }
+
 }

@@ -97,3 +97,27 @@ body {
 #restart:hover {
     background-color: #ee8341;
 }
+
+@media screen and (max-width: 750px) {
+    #bureau {
+        width: 100%;
+    }
+
+    #game button {
+        height: 10rem;
+        font-size: 8rem;
+    }
+
+}
+
+@media screen and  (max-width: 400px){
+    #titre h1 {
+        font-size: 3rem;
+    }
+
+    #game button {
+        height: 8rem;
+        font-size: 5rem;
+        padding-left: 2rem;
+    }
+}
