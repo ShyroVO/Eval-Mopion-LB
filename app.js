@@ -19,11 +19,11 @@ else {
 // Changement de tour:
 function aQuiLeTour () {
     if (compteur === 2) {
-        quiJoue.innerHTML = "Joueur X !";
+        quiJoue.innerHTML = "Joueur X!";
         quiJoue.style.backgroundColor= "lightblue";
     }
     else {
-        quiJoue.innerHTML = "Joueur O !";
+        quiJoue.innerHTML = "Joueur O!";
         quiJoue.style.backgroundColor= "#ee8341";
     }
 }
@@ -37,17 +37,16 @@ function caseNameNumber (caseNumber) {
     let caseName = "case";
     let pionX = "X";
     let pionO = "O";
+    pionTotals--;
 
     if (event.button === 0){
         document.getElementById(caseName+caseNumber).innerHTML= pionX;
         aQuiLeTour();
-        pionTotals--;
         compteur = 2;
     }
     else if (event.button === 2) {
         document.getElementById(caseName+caseNumber).innerHTML= pionO;
         aQuiLeTour();
-        pionTotals--;
         compteur = 1;
     }
 }
@@ -158,6 +157,12 @@ for (let caseMorpion of casesMorpion) {
                 break;
         }
     })
+}
+
+// Computer:
+function computer (){
+    let ordiRandom = Math.floor(Math.random()* 9 + 1);
+    caseNameNumber(ordiRandom);
 }
 
 //Reload page:
