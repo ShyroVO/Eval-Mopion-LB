@@ -1,4 +1,4 @@
-// pas de clic droit menu:
+// formule de clic droit:
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
@@ -17,7 +17,6 @@ else {
 }
 
 // Changement de tour:
-
 function aQuiLeTour () {
     if (compteur === 2) {
         quiJoue.innerHTML = "Joueur X !";
@@ -42,7 +41,7 @@ function elementsJoueurO () {
 }
 
 // Boucle action sur les cases (bouton):
-let casesMorpion = document.getElementsByTagName('button');
+let casesMorpion = document.getElementsByClassName("caseCheck");
 let pionX = "X";
 let pionO = "O";
 let pionTotals = 9;
