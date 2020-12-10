@@ -28,178 +28,147 @@ function aQuiLeTour () {
     }
 }
 
-function elementsJoueurX () {
-    aQuiLeTour();
-    compteur = 2;
-    pionTotals--;
-}
-
-function elementsJoueurO () {
-    aQuiLeTour();
-    compteur = 1;
-    pionTotals--;
-}
-
 // Boucle action sur les cases (bouton):
 let casesMorpion = document.getElementsByClassName("caseCheck");
-let pionX = "X";
-let pionO = "O";
 let pionTotals = 9;
-
 let one, two, three, four, five, six, seven, eight, nine;
 
+function caseNameNumber (caseNumber) {
+    let caseName = "case";
+    let pionX = "X";
+    let pionO = "O";
+
+    if (event.button === 0){
+        document.getElementById(caseName+caseNumber).innerHTML= pionX;
+        aQuiLeTour();
+        pionTotals--;
+        compteur = 2;
+    }
+    else if (event.button === 2) {
+        document.getElementById(caseName+caseNumber).innerHTML= pionO;
+        aQuiLeTour();
+        pionTotals--;
+        compteur = 1;
+    }
+}
+
 for (let caseMorpion of casesMorpion) {
-    caseMorpion.addEventListener('click', function (){
+    caseMorpion.addEventListener('mouseup', function (){
+        let clickL = event.button === 0;
+        let clickR = event.button === 2;
 
         switch (caseMorpion.id) {
             case 'case1':
-                if (compteur === 1) {
-                    document.getElementById('case1').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("1");
+                if (clickL) {
                     one = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case1').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     one = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case2':
-                if (compteur === 1) {
-                    document.getElementById('case2').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("2");
+                if (clickL) {
                     two = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case2').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     two = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case3':
-                if (compteur === 1) {
-                    document.getElementById('case3').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("3");
+                if (clickL) {
                     three = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case3').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     three = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case4':
-                if (compteur === 1) {
-                    document.getElementById('case4').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("4");
+                if (clickL) {
                     four = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case4').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     four = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case5':
-                if (compteur === 1) {
-                    document.getElementById('case5').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("5");
+                if (clickL) {
                     five = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case5').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     five = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case6':
-                if (compteur === 1) {
-                    document.getElementById('case6').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("6");
+                if (clickL) {
                     six = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case6').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     six = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case7':
-                if (compteur === 1) {
-                    document.getElementById('case7').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("7");
+                if (clickL) {
                     seven = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case7').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     seven = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case8':
-                if (compteur === 1) {
-                    document.getElementById('case8').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("8");
+                if (clickL) {
                     eight = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case8').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     eight = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
 
             case 'case9':
-                if (compteur === 1) {
-                    document.getElementById('case9').innerHTML= pionX;
-                    elementsJoueurX()
+                caseNameNumber("9");
+                if (clickL) {
                     nine = true;
-                    checkCase();
                 }
-                else {
-                    document.getElementById('case9').innerHTML= pionO;
-                    elementsJoueurO()
+                else if (clickR) {
                     nine = false;
-                    checkCase();
                 }
+                checkCase();
                 break;
-
-            case 'restart':
-                window.location.reload();
-                break;
-
         }
     })
 }
 
-// Victoire de qui:
+//Reload page:
+document.getElementById('restart').addEventListener('click', function reloadPage(){
+    window.location.reload();
+})
+
+// Win check:
 let playerWin = document.getElementById('playerWin');
 
 function checkCase() {
-
     if (one === true && two === true && three === true || four === true && five === true && six === true ||
         seven === true && eight === true && nine === true || one === true && four === true && seven === true ||
         two === true && five === true && eight === true || three === true && six === true && nine === true ||
@@ -211,9 +180,7 @@ function checkCase() {
         quiJoue.style.backgroundColor="lightblue";
         alert("Joueur X Gagne!");
         pionTotals++;
-        window.location.reload();
     }
-
     else if (one === false && two === false && three === false || four === false && five === false && six === false ||
         seven === false && eight === false && nine === false || one === false && four === false && seven === false ||
         two === false && five === false && eight === false || three === false && six === false && nine === false ||
@@ -225,15 +192,13 @@ function checkCase() {
         quiJoue.style.backgroundColor="#ee8341";
         alert("Joueur O Gagne!");
         pionTotals++;
-        window.location.reload();
     }
-
     if (pionTotals === 0) {
         quiJoue.innerHTML= "Match Nul!"
         playerWin.innerHTML= "Match Nul!";
         playerWin.style.backgroundColor= "red";
         quiJoue.style.backgroundColor= "red";
+        alert("Match Nul!");
         window.location.reload();
     }
 }
-

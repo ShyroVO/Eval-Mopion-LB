@@ -7,6 +7,11 @@
 body {
     font-size: 62.5%;
     width: 100%;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+#restart, #game div, body {
     font-family: 'East Sea Dokdo', cursive;
 }
 
@@ -34,14 +39,14 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: solid black 0.3rem;
 }
 
 #game div {
     font-size: 13rem;
     width: 33.33%;
     height: 13rem;
-    border-color: black;
+    border-color: white;
+    border-radius: 1rem;
     background: none;
     border-width: 0.3rem;
     display: flex;
@@ -75,17 +80,13 @@ body {
 
 #score {
     text-align: center;
-    height: 5rem;
+    height: 6rem;
     width: 100%;
 }
 
 #restartButton {
     display: flex;
     flex-direction: row-reverse;
-}
-
-#restart, #game div {
-    font-family: 'East Sea Dokdo', cursive;
 }
 
 #restart {
@@ -100,9 +101,14 @@ body {
     background-color: #ee8341;
 }
 
+#consignes {
+    font-size: 1.5rem;
+}
+
 @media screen and (max-width: 750px) {
     #bureau {
         width: 100%;
+        height: 2rem;
     }
 
     #game div {
